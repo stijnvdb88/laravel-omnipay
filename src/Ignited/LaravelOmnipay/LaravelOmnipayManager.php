@@ -117,6 +117,11 @@ class LaravelOmnipayManager {
         $this->gateway = $name;
     }
 
+    public function validateLuhn($number)
+    {
+        return Helper::validateLuhn($number);
+    }
+    
     public function __call($method, $parameters)
     {
         $callable = array($this->gateway(), $method);
